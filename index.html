@@ -87,6 +87,12 @@
 
         canvas.style.width = "1920px";
         canvas.style.height = "1080px";
+		
+		// 获取窗口宽度
+		canvas.style.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+		// 获取窗口高度
+		canvas.style.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
       }
 
       loadingBar.style.display = "block";
