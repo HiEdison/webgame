@@ -1,4 +1,4 @@
-const cacheName = "DefaultCompany-webgame-0.1";
+const cacheName = "DefaultCompany-webgame-0.2";
 const contentToCache = [
     "Build/webgame.loader.js",
     "Build/webgame.framework.js",
