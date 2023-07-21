@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:ListView focusable="true" name="ListView" style="height: 99%; width: 330px; flex-grow: 0; flex-direction: column; flex-basis: 5px; justify-content: space-around; position: absolute; left: 0; bottom: 0; top: 0; max-height: 99%; flex-wrap: nowrap;" />
+</ui:UXML>
