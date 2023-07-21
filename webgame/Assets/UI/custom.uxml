@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/custom.uss?fileID=7433441132597879392&amp;guid=56786d65281acc341a0b216ac2c5587c&amp;type=3#custom" />
+    <ui:Button tabindex="-1" text="Button" display-tooltip-when-elided="true" class="cusbutton" style="height: 119px; -unity-slice-left: 24; -unity-slice-top: 24; -unity-slice-right: 24; -unity-slice-bottom: 24; -unity-text-align: middle-center; white-space: normal; font-size: 50px;" />
+    <ui:Button tabindex="-1" text="Button" display-tooltip-when-elided="true" class="cusbutton" style="height: 119px; -unity-slice-left: 24; -unity-slice-top: 24; -unity-slice-right: 24; -unity-slice-bottom: 24; -unity-text-align: middle-center; white-space: normal; font-size: 50px;" />
+</ui:UXML>

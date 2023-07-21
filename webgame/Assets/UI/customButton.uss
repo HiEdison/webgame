@@ -1,0 +1,28 @@
+.cusbutton {
+    background-image: url('project://database/Assets/_UI_TEMP_DO_NOT_USE/_Art/_Sliced/btn9s-Red.png?fileID=2800000&guid=5dbe0ab8871ee1a408688db340b3a02a&type=3#btn9s-Red');
+}
+
+.cusbutton:hover {
+    background-image: url('project://database/Assets/_UI_TEMP_DO_NOT_USE/_Art/_Sliced/btn9s-Green-hover.png?fileID=2800000&guid=8b24730c2f0c6e54bbb1ec51b3dedc87&type=3#btn9s-Green-hover');
+    -unity-slice-left: 24;
+    -unity-slice-top: 24;
+    -unity-slice-right: 24;
+    -unity-slice-bottom: 24;
+    background-color: rgba(238, 100, 100, 255);
+}
+
+.cusbutton:focus {
+    background-image: url('project://database/Assets/_UI_TEMP_DO_NOT_USE/MainPlane/UI/Icons/avatar/PrefabUI/Art/9slice/btn9s-Red-hover.png?fileID=2800000&guid=0a1515d6e3ad7784a9a34803e3b936fa&type=3#btn9s-Red-hover');
+    -unity-slice-left: 24;
+    -unity-slice-top: 24;
+    -unity-slice-right: 24;
+    -unity-slice-bottom: 24;
+}
+
+.cusbutton:active {
+    background-image: url('project://database/Assets/_UI_TEMP_DO_NOT_USE/_Art/_Sliced/btn9s-Red-Dark-click.png?fileID=2800000&guid=6af3aac71bb97ae41a6c047c46fc1f41&type=3#btn9s-Red-Dark-click');
+    -unity-slice-left: 24;
+    -unity-slice-top: 24;
+    -unity-slice-right: 24;
+    -unity-slice-bottom: 24;
+}
