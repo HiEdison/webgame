@@ -10,18 +10,20 @@ using UnityEngine.UIElements;
 //https://docs.unity.cn/Manual/UIE-uxml-element-TextField.html
 public class GmsTreeView : UICounter
 {
+    public VisualTreeAsset prefab;
     private ListView _listView;
     private TextField _search;
-    public VisualTreeAsset prefab;
     private Label fps;
+    private Button btnset;
     private GameObject[] _objs;
-
+    public SettingPopup popup;
     protected override void Awake()
     {
         base.Awake();
         _listView = root.Q<ListView>("ListView");
         _search = root.Q<TextField>("search");
         fps = root.Q<Label>("fps");
+        btnset = root.Q<Button>("set");
 
         _listView.selectionType = SelectionType.Multiple;
 
@@ -34,6 +36,15 @@ public class GmsTreeView : UICounter
         _search.RegisterCallback<KeyDownEvent>(OnSearchCallback, TrickleDown.TrickleDown);
 #endif
         _search.RegisterValueChangedCallback(OnSearchChangeed);
+
+        btnset.RegisterCallback<ClickEvent>(OnSetting);
+
+       
+    }
+    private void OnSetting(ClickEvent evt)
+    {
+        // root.SetEnabled(false);
+        popup.Open();
     }
 
     private void OnListViewClick(MouseDownEvent evt)
@@ -41,13 +52,13 @@ public class GmsTreeView : UICounter
         switch (evt.button)
         {
             case 0: //左键
-               Log($"listview 鼠标左键按键按下");
+                Log($"listview 鼠标左键按键按下");
                 break;
             case 1: //右键
-               Log($"listview 鼠标右键按键按下");
+                Log($"listview 鼠标右键按键按下");
                 break;
             case 2: //中间
-               Log($"listview 鼠标中键按键按下");
+                Log($"listview 鼠标中键按键按下");
                 break;
         }
     }
@@ -126,14 +137,14 @@ public class GmsTreeView : UICounter
             selectLs.Add((GameObject)item);
         }
 
-       Log(str);
+        Log(str);
     }
 
     private void OnItemsChosen(IEnumerable<object> obj)
     {
         foreach (var item in obj)
         {
-           Log(item);
+            Log(item);
         }
     }
 
@@ -179,13 +190,13 @@ public class GmsTreeView : UICounter
         switch (evt.button)
         {
             case 0: //左键
-               Log($"item 鼠标左键按键按下:{label.text}");
+                Log($"item 鼠标左键按键按下:{label.text}");
                 break;
             case 1: //右键
-               Log($"item 鼠标右键按键按下:{label.text}");
+                Log($"item 鼠标右键按键按下:{label.text}");
                 break;
             case 2: //中间
-               Log($"item 鼠标中键按键按下:{label.text}");
+                Log($"item 鼠标中键按键按下:{label.text}");
                 break;
         }
     }
@@ -195,7 +206,7 @@ public class GmsTreeView : UICounter
     {
         if (evt.clickCount == 2)
         {
-           Log($"双击{selectLs[0]}");
+            Log($"双击{selectLs[0]}");
             CameraFocus.Foucs(selectLs[0]);
         }
     }
@@ -225,8 +236,8 @@ public class GmsTreeView : UICounter
         var listView = new ListView(items, itemHeight, makeItem, bindItem);
         listView.selectionType = SelectionType.Multiple;
 
-        listView.onItemsChosen += objects =>Log(objects);
-        listView.onSelectionChange += objects =>Log(objects);
+        listView.onItemsChosen += objects => Log(objects);
+        listView.onSelectionChange += objects => Log(objects);
 
         listView.style.flexGrow = 1.0f;
 

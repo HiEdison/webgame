@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="VisualElement" style="width: 30%; height: 100%; background-color: rgb(56, 56, 56); -unity-text-outline-color: rgba(0, 0, 0, 0.61); position: absolute; display: flex; visibility: visible; opacity: 1; align-items: stretch; top: -2px; left: 70%;">
+        <ui:GroupBox>
+            <ui:Toggle label="fog" name="fog" style="height: 65px; font-size: 30px; -unity-font-style: bold; width: 190px; -unity-text-align: middle-right; margin-left: 0; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; color: rgb(255, 255, 255);" />
+            <ui:Slider picking-mode="Ignore" label="Density" value="0.01" high-value="0.05" name="fogDensity" low-value="0.0001" page-size="0" style="-unity-font-style: bold; font-size: 30px; color: rgb(255, 255, 255);">
+                <ui:Label tabindex="-1" text="0" display-tooltip-when-elided="true" name="densityValue" />
+            </ui:Slider>
+        </ui:GroupBox>
+        <ui:Button tabindex="-1" text="save" display-tooltip-when-elided="true" name="btnSave" style="width: 224px; height: 65px; position: absolute; top: auto; left: 334px; font-size: 30px; -unity-font-style: bold; color: rgb(255, 244, 244); background-color: rgb(144, 13, 13); bottom: 13px; flex-direction: column; align-items: center; justify-content: flex-start; flex-shrink: 0;" />
+    </ui:VisualElement>
+</ui:UXML>
