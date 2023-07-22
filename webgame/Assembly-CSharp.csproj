@@ -54,6 +54,7 @@
      <None Include="Assets\UI\ConfirmDialog2.uxml" />
      <None Include="Assets\UI\SettingPopup.uxml" />
      <None Include="Assets\UI\TextField.uss" />
+     <None Include="Assets\StreamingAssets\UnityServicesProjectConfiguration.json" />
      <None Include="Assets\UI\label.uxml" />
      <None Include="Assets\UI\customButton.uss" />
      <None Include="Assets\UI\GmsTreeView.uxml" />
