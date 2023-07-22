@@ -43,12 +43,12 @@
   <ItemGroup>
      <Compile Include="Assets\Codes\Frame.cs" />
      <Compile Include="Assets\Codes\PopupUI_one.cs" />
+     <Compile Include="Assets\Codes\CameraFocus.cs" />
      <Compile Include="Assets\Codes\PopupUI_two.cs" />
      <Compile Include="Assets\Codes\LoadGms.cs" />
      <Compile Include="Assets\Codes\UICounter.cs" />
      <Compile Include="Assets\Codes\SkipUnityLogo.cs" />
      <Compile Include="Assets\Codes\GmsTreeView.cs" />
-     <Compile Include="Assets\Codes\CameraFocus.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\UI\ConfirmDialog2.uxml" />
      <None Include="Assets\UI\TextField.uss" />
@@ -692,6 +692,9 @@
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>E:\github\webgame\webgame\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.2D.Sprite.Editor">
+     <HintPath>E:\github\webgame\webgame\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
      <HintPath>E:\github\webgame\webgame\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
      </Reference>
@@ -736,9 +739,6 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>E:\github\webgame\webgame\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.2D.Sprite.Editor">
-     <HintPath>E:\github\webgame\webgame\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
