@@ -9,7 +9,7 @@ public class UICounter : MonoBehaviour
   
     public VisualElement root;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         root  = GetComponent<UIDocument>().rootVisualElement;
     }

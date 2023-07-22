@@ -6,32 +6,94 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
+//https://docs.unity.cn/Manual/UIE-uxml-element-TextField.html
 public class GmsTreeView : UICounter
 {
     private ListView _listView;
+    private TextField _search;
     public VisualTreeAsset prefab;
     private Label fps;
+    private GameObject[] _objs;
 
-    void Start()
+    protected override void Awake()
     {
+        base.Awake();
         _listView = root.Q<ListView>("ListView");
+        _search = root.Q<TextField>("search");
         fps = root.Q<Label>("fps");
 
         _listView.selectionType = SelectionType.Multiple;
 
         _listView.onItemsChosen += OnItemsChosen;
         _listView.onSelectionChange += OnSelectionChange;
+
+        _search.value = "";
+#if UNITY_EDITOR
+        _search.RegisterCallback<KeyDownEvent>(OnSearchCallback, TrickleDown.TrickleDown);
+#endif
+        _search.RegisterValueChangedCallback(OnSearchChangeed);
     }
 
-    private int count;
-    private float time;
+    private void OnSearchChangeed(ChangeEvent<string> evt)
+    {
+        if (string.IsNullOrEmpty(evt.newValue))
+        {
+            SearchGo();
+        }
+        else
+        {
+            SearchGo();
+        }
+    }
 
     private void Update()
     {
-        count++;
-
         fps.text = string.Format("Fps:{0} ", (int)Frame._Fps);
     }
+
+    private void OnSearchCallback(KeyDownEvent evt)
+    {
+        if (evt.keyCode == KeyCode.Return)
+        {
+            // Submit logic
+            // evt.StopPropagation();
+            // evt.PreventDefault();
+            SearchGo();
+        }
+
+        if (evt.modifiers == EventModifiers.Shift && (evt.keyCode == KeyCode.Tab || _search.text == @"/t"))
+        {
+            // Focus logic
+            evt.StopPropagation();
+            evt.PreventDefault();
+        }
+    }
+
+    void SearchGo()
+    {
+        if (!string.IsNullOrEmpty(_search.text))
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            var objs = currentScene.GetRootGameObjects();
+            List<GameObject> newlist = new List<GameObject>();
+            var letstr = _search.text.ToLower();
+            for (int i = 0; i < objs.Length; i++)
+            {
+                if (objs[i].name.ToLower().StartsWith(letstr))
+                {
+                    newlist.Add(objs[i]);
+                }
+            }
+            _objs = newlist.ToArray();
+        }
+        else
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            _objs = currentScene.GetRootGameObjects();
+        }
+        RefreshEvent();
+    }
+
 
     private void OnSelectionChange(IEnumerable<object> obj)
     {
@@ -58,15 +120,15 @@ public class GmsTreeView : UICounter
             items.Add(ls[i].name);
         }
 
-        RefreshEvent();
+        //RefreshEvent();
+        SearchGo();
     }
 
-    private GameObject[] _objs;
 
     private void RefreshEvent()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-        _objs = currentScene.GetRootGameObjects();
+        // Scene currentScene = SceneManager.GetActiveScene();
+        // _objs = currentScene.GetRootGameObjects();
         _listView.itemsSource = _objs;
         _listView.makeItem = MakeListItem;
         _listView.bindItem = BindListItem;

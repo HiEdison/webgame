@@ -10,6 +10,7 @@ public class LoadGms : MonoBehaviour
     public string ip = "cdvps2.woogiworld.cn";
     IEnumerator Start()
     {
+        yield return 0;
         // UnityWebRequest request = UnityWebRequestAssetBundle.GetAssetBundle(
         //     $"https://{ip}/client/assets_view/1/StreamingAssets/AssetBundle/WebGL/aaresourcesextends/scenebake/{sceneName}.webgl");
 //https://cdvps2.woogiworld.cn/client/assets_view/1/StreamingAssets/AssetBundle/WebGL/aaresourcesextends/scenebake/819.webgl
