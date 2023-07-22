@@ -48,6 +48,7 @@
      <Compile Include="Assets\Codes\UICounter.cs" />
      <Compile Include="Assets\Codes\SkipUnityLogo.cs" />
      <Compile Include="Assets\Codes\GmsTreeView.cs" />
+     <Compile Include="Assets\Codes\CameraFocus.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\UI\ConfirmDialog2.uxml" />
      <None Include="Assets\UI\TextField.uss" />
@@ -58,7 +59,6 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\UI\label.uss" />
-     <None Include="Assets\StreamingAssets\UnityServicesProjectConfiguration.json" />
      <None Include="Assets\UI\custom.uxml" />
      <None Include="Assets\UI\PopupUI_one.uss" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />

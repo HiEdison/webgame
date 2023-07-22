@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,12 +27,29 @@ public class GmsTreeView : UICounter
 
         _listView.onItemsChosen += OnItemsChosen;
         _listView.onSelectionChange += OnSelectionChange;
+        _listView.RegisterCallback<MouseDownEvent>(OnListViewClick);
 
         _search.value = "";
 #if UNITY_EDITOR
         _search.RegisterCallback<KeyDownEvent>(OnSearchCallback, TrickleDown.TrickleDown);
 #endif
         _search.RegisterValueChangedCallback(OnSearchChangeed);
+    }
+
+    private void OnListViewClick(MouseDownEvent evt)
+    {
+        switch (evt.button)
+        {
+            case 0: //左键
+               Log($"listview 鼠标左键按键按下");
+                break;
+            case 1: //右键
+               Log($"listview 鼠标右键按键按下");
+                break;
+            case 2: //中间
+               Log($"listview 鼠标中键按键按下");
+                break;
+        }
     }
 
     private void OnSearchChangeed(ChangeEvent<string> evt)
@@ -84,6 +102,7 @@ public class GmsTreeView : UICounter
                     newlist.Add(objs[i]);
                 }
             }
+
             _objs = newlist.ToArray();
         }
         else
@@ -91,23 +110,30 @@ public class GmsTreeView : UICounter
             Scene currentScene = SceneManager.GetActiveScene();
             _objs = currentScene.GetRootGameObjects();
         }
+
         RefreshEvent();
     }
 
+    public List<GameObject> selectLs = new List<GameObject>();
 
     private void OnSelectionChange(IEnumerable<object> obj)
     {
+        string str = "选中对象：";
+        selectLs.Clear();
         foreach (var item in obj)
         {
-            Debug.Log(item);
+            str += $",{item}";
+            selectLs.Add((GameObject)item);
         }
+
+       Log(str);
     }
 
     private void OnItemsChosen(IEnumerable<object> obj)
     {
         foreach (var item in obj)
         {
-            Debug.Log(item);
+           Log(item);
         }
     }
 
@@ -136,11 +162,42 @@ public class GmsTreeView : UICounter
 
     private VisualElement MakeListItem()
     {
-        return prefab.Instantiate().Q<Label>("Label");
+        var lable = prefab.Instantiate().Q<Label>("Label");
+        lable.RegisterCallback<ClickEvent>(OnClickIitem, TrickleDown.TrickleDown);
+        //https://docs.unity3d.com/ScriptReference/UIElements.MouseDownEvent.html
+        lable.RegisterCallback<MouseDownEvent>(OnClickIitem3);
+        return lable;
         // var label = new Label();
         // label.style.unityTextAlign = TextAnchor.MiddleCenter;
         // label.style.marginLeft = 5;
         // return label;
+    }
+
+    private void OnClickIitem3(MouseDownEvent evt)
+    {
+        var label = (Label)evt.currentTarget;
+        switch (evt.button)
+        {
+            case 0: //左键
+               Log($"item 鼠标左键按键按下:{label.text}");
+                break;
+            case 1: //右键
+               Log($"item 鼠标右键按键按下:{label.text}");
+                break;
+            case 2: //中间
+               Log($"item 鼠标中键按键按下:{label.text}");
+                break;
+        }
+    }
+
+
+    private void OnClickIitem(ClickEvent evt)
+    {
+        if (evt.clickCount == 2)
+        {
+           Log($"双击{selectLs[0]}");
+            CameraFocus.Foucs(selectLs[0]);
+        }
     }
 
     private void BindListItem(VisualElement arg1, int index)
@@ -168,8 +225,8 @@ public class GmsTreeView : UICounter
         var listView = new ListView(items, itemHeight, makeItem, bindItem);
         listView.selectionType = SelectionType.Multiple;
 
-        listView.onItemsChosen += objects => Debug.Log(objects);
-        listView.onSelectionChange += objects => Debug.Log(objects);
+        listView.onItemsChosen += objects =>Log(objects);
+        listView.onSelectionChange += objects =>Log(objects);
 
         listView.style.flexGrow = 1.0f;
 
