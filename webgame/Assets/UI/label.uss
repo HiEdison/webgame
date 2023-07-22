@@ -1,0 +1,12 @@
+.label {
+    background-color: rgba(156, 103, 103, 255);
+    width: 330px;
+    height: 60px;
+    -unity-text-align: middle-left;
+    font-size: 30px;
+}
+
+.label:hover {
+    color: rgba(200, 63, 63, 255);
+    background-color: rgba(168, 147, 147, 255);
+}

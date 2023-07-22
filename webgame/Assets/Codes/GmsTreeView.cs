@@ -10,14 +10,27 @@ public class GmsTreeView : UICounter
 {
     private ListView _listView;
     public VisualTreeAsset prefab;
+    private Label fps;
 
     void Start()
     {
         _listView = root.Q<ListView>("ListView");
+        fps = root.Q<Label>("fps");
+
         _listView.selectionType = SelectionType.Multiple;
 
         _listView.onItemsChosen += OnItemsChosen;
         _listView.onSelectionChange += OnSelectionChange;
+    }
+
+    private int count;
+    private float time;
+
+    private void Update()
+    {
+        count++;
+
+        fps.text = string.Format("Fps:{0} ", (int)Frame._Fps);
     }
 
     private void OnSelectionChange(IEnumerable<object> obj)

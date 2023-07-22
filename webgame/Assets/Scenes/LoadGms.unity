@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 832498512}
   - component: {fileID: 832498514}
   - component: {fileID: 832498515}
+  - component: {fileID: 832498516}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -240,7 +241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: 819
   ip: cdvps2.woogiworld.cn
-  View: {fileID: 832498515}
 --- !u!4 &832498513
 Transform:
   m_ObjectHideFlags: 0
@@ -284,7 +284,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbee358b6be71eb45934a640a3491425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9197481963319205126, guid: 32443824b5940114e96874d6d2e56aae, type: 3}
+  prefab: {fileID: 9197481963319205126, guid: 06b7d7258b26824469d5824a8ff21474, type: 3}
+--- !u!114 &832498516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832498511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eea65792a972144e8ee81a8485b30fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1167323462
 GameObject:
   m_ObjectHideFlags: 0
