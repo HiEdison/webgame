@@ -17,6 +17,7 @@ public class GmsTreeView : UICounter
     private Button btnset;
     private GameObject[] _objs;
     public SettingPopup popup;
+
     protected override void Awake()
     {
         base.Awake();
@@ -39,8 +40,11 @@ public class GmsTreeView : UICounter
 
         btnset.RegisterCallback<ClickEvent>(OnSetting);
 
-       
+        var togLog = root.Q<Toggle>("islog");
+        togLog.value = isLog;
+        togLog.RegisterValueChangedCallback((evt) => { isLog = evt.newValue; });
     }
+
     private void OnSetting(ClickEvent evt)
     {
         // root.SetEnabled(false);

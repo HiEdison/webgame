@@ -49,8 +49,10 @@
      <Compile Include="Assets\Codes\UICounter.cs" />
      <Compile Include="Assets\Codes\SkipUnityLogo.cs" />
      <Compile Include="Assets\Codes\GmsTreeView.cs" />
+     <Compile Include="Assets\Codes\SettingPopup.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\UI\ConfirmDialog2.uxml" />
+     <None Include="Assets\UI\SettingPopup.uxml" />
      <None Include="Assets\UI\TextField.uss" />
      <None Include="Assets\UI\label.uxml" />
      <None Include="Assets\UI\customButton.uss" />
