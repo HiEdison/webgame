@@ -20,4 +20,5 @@
     <ui:VisualElement name="test4" class="droppable" style="width: 200px; height: 37px; position: absolute; top: 140px; left: 143px;" />
     <ui:VisualElement name="test3" class="droppable" style="width: 200px; height: 37px; position: absolute; top: 197px; left: 142px;" />
     <ui:VisualElement name="test5" class="droppable" style="width: 200px; height: 37px; position: absolute; top: 274px; left: 147px;" />
+    <ui:VisualElement name="big" class="droppable" style="width: 200px; height: 331px; position: absolute; top: 62px; left: 593px;" />
 </ui:UXML>

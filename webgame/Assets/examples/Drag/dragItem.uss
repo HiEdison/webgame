@@ -13,8 +13,9 @@
 }
 
 .droppable {
-    background-color: rgba(175, 58, 183, 255);
+    background-color: rgba(2, 1, 2, 0.48);
 }
 
 .droppable--can-drop {
+    background-color: rgba(36, 72, 37, 0.43);
 }
