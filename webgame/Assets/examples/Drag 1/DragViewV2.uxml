@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/examples/Drag%201/dragItem2.uss?fileID=7433441132597879392&amp;guid=2a9f58280933f9a4c98733b306dd5d27&amp;type=3#dragItem2" />
+    <ui:VisualElement name="item_0" class="draggable" style="width: 100px;">
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" picking-mode="Ignore" />
+        <ui:VisualElement name="children" class="droppable" style="position: absolute; top: 35px; left: 15px; height: 30px; width: 102px;">
+            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" picking-mode="Ignore" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="item_1" class="draggable" style="width: 100px;">
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" picking-mode="Ignore" />
+        <ui:VisualElement name="children" class="droppable" style="position: absolute; top: 35px; left: 15px; height: 30px; width: 102px;">
+            <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" picking-mode="Ignore" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -164,7 +164,7 @@ public class DragManipulator : IManipulator
             enabled = got;
     }
 
-    private void DragBegin(PointerDownEvent ev)
+    protected virtual void DragBegin(PointerDownEvent ev)
     {
         if (!enabled)
             return;
