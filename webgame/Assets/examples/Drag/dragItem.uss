@@ -1,0 +1,20 @@
+.draggable {
+    background-color: rgba(137, 112, 112, 255);
+    -unity-font-style: bold;
+    font-size: 16px;
+}
+
+.draggable--dragging {
+    background-color: rgba(70, 133, 188, 255);
+}
+
+.draggable--can-drop {
+    background-color: rgba(50, 250, 1, 255);
+}
+
+.droppable {
+    background-color: rgba(175, 58, 183, 255);
+}
+
+.droppable--can-drop {
+}

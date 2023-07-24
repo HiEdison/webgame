@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/examples/Drag/dragItem.uss?fileID=7433441132597879392&amp;guid=d747ddac1636b9143ae758cc615328e6&amp;type=3#dragItem" />
+    <ui:VisualElement name="item_0" class="draggable" style="width: 100px;">
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" />
+    </ui:VisualElement>
+    <ui:VisualElement name="item_1" class="draggable" style="width: 100px;">
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" />
+    </ui:VisualElement>
+    <ui:VisualElement name="item_2" class="draggable" style="width: 100px;">
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" />
+    </ui:VisualElement>
+    <ui:VisualElement name="item_3" class="draggable" style="width: 100px;">
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" />
+    </ui:VisualElement>
+    <ui:VisualElement name="item_4" class="draggable" style="width: 100px;">
+        <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="Label" />
+    </ui:VisualElement>
+    <ui:VisualElement name="test1" class="droppable" style="width: 200px; height: 37px; position: absolute; top: 36px; left: 146px;" />
+    <ui:VisualElement name="test2" class="droppable" style="width: 200px; height: 37px; position: absolute; top: 86px; left: 146px;" />
+    <ui:VisualElement name="test4" class="droppable" style="width: 200px; height: 37px; position: absolute; top: 140px; left: 143px;" />
+    <ui:VisualElement name="test3" class="droppable" style="width: 200px; height: 37px; position: absolute; top: 197px; left: 142px;" />
+    <ui:VisualElement name="test5" class="droppable" style="width: 200px; height: 37px; position: absolute; top: 274px; left: 147px;" />
+</ui:UXML>
